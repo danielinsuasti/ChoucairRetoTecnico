@@ -26,8 +26,8 @@ public class UTestRegisterPage{
 
 
     public static final Target BTN_NEXT3 = Target.the("button that show us the second part").located(By.id("laddaBtn"));
-    public static final Target TEXT_MESSAGE = Target.the("button that show us the second part").located(By.xpath("//div[@class='image-box-header']//h1"));
-
+    //public static final Target TEXT_MESSAGE = Target.the("button that show us the second part").located(By.xpath("//div[@class='image-box-header']//h1"));
+    public static final Target TEXT_MESSAGE = Target.the("button that show us the second part").located(By.xpath("//section[@id='regs_container']//h1[@class='step-title']//span"));
 
 
 

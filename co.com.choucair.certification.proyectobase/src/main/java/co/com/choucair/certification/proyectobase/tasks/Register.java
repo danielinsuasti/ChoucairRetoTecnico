@@ -21,10 +21,10 @@ public class Register implements Task {
     private String strBirthYear;
     private String strPasswd;
     private String strConfirmPasswd;
-    private String strWelcomeMessage;
 
 
-    public Register(String strFirstName, String strLastName, String strEmail, String strBirthMonth, String strBirthDay, String strBirthYear, String strPasswd, String strConfirmPasswd, String strWelcomeMessage ) {
+
+    public Register(String strFirstName, String strLastName, String strEmail, String strBirthMonth, String strBirthDay, String strBirthYear, String strPasswd, String strConfirmPasswd ) {
         this.strFirstName = strFirstName;
         this.strLastName = strLastName;
         this.strEmail = strEmail;
@@ -33,14 +33,14 @@ public class Register implements Task {
         this.strBirthYear = strBirthYear;
         this.strPasswd = strPasswd;
         this.strConfirmPasswd = strConfirmPasswd;
-        this.strWelcomeMessage = strWelcomeMessage;
+        //this.strWelcomeMessage = strWelcomeMessage;
     }
 
 
 
 
-    public static Register onThePage(String strFirstName, String strLastName, String strEmail, String strBirthMonth, String strBirthDay, String strBirthYear, String strPasswd, String strConfirmPasswd, String strWelcomeMessage) {
-        return Tasks.instrumented(Register.class, strFirstName, strLastName, strEmail, strBirthMonth, strBirthDay, strBirthYear, strPasswd, strConfirmPasswd, strWelcomeMessage);
+    public static Register onThePage(String strFirstName, String strLastName, String strEmail, String strBirthMonth, String strBirthDay, String strBirthYear, String strPasswd, String strConfirmPasswd) {
+        return Tasks.instrumented(Register.class, strFirstName, strLastName, strEmail, strBirthMonth, strBirthDay, strBirthYear, strPasswd, strConfirmPasswd);
     }
 
     @Override
@@ -67,10 +67,10 @@ public class Register implements Task {
                 Click.on(UTestRegisterPage.CHECK_TERMOFUSE),
                 Click.on(UTestRegisterPage.CHECK_PRIVACYSETTING),
 
-                WaitUntil.the(UTestRegisterPage.BTN_NEXT3, isVisible()),
-                Click.on(UTestRegisterPage.BTN_NEXT3),
+                WaitUntil.the(UTestRegisterPage.BTN_NEXT3, isVisible())
+                //Click.on(UTestRegisterPage.BTN_NEXT3)
 
-                WaitUntil.the(UTestRegisterPage.TEXT_MESSAGE, isVisible())
+
 
 
         );

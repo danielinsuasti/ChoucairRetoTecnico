@@ -32,8 +32,8 @@ public class UtestRegisterStepDefinitions {
 
     }
 
-    @When("^he enters all the requiered data on Utest page JOINTODAY$")
-    public void heEntersAllTheRequieredDataOnUtestPageJOINTODAY(List<UTestRegisterData> uTestRegisterData) throws Exception{
+    @When("^he enters all the required data on Utest page JOINTODAY$")
+    public void heEntersAllTheRequiredDataOnUtestPageJOINTODAY(List<UTestRegisterData> uTestRegisterData) throws Exception{
         OnStage.theActorInTheSpotlight().attemptsTo(
                 (Register.onThePage(
                         uTestRegisterData.get(0).getStrFirstName(),
@@ -43,16 +43,14 @@ public class UtestRegisterStepDefinitions {
                         uTestRegisterData.get(0).getStrBirthDay(),
                         uTestRegisterData.get(0).getStrBirthYear(),
                         uTestRegisterData.get(0).getStrPasswd(),
-                        uTestRegisterData.get(0).getStrConfirmPasswd(),
-                        uTestRegisterData.get(0).getStrWelcomeMessage()))
+                        uTestRegisterData.get(0).getStrConfirmPasswd()
+                ))
         );
-
-
     }
 
-    @Then("^he finds a welcome message$")
-    public void heFindsAWelcomeMessage(List<UTestRegisterData> uTestRegisterData) {
-        OnStage.theActorInTheSpotlight().should(seeThat(Answer.toThe(uTestRegisterData.get(0).getStrWelcomeMessage())));
+    @Then("^he finds a message$")
+    public void heFindsAMessage(List<UTestRegisterData> uTestRegisterData) throws Exception{
+        OnStage.theActorInTheSpotlight().should(seeThat(Answer.toThe(uTestRegisterData.get(0).getStrWelcomeMessage() )));
 
 
     }
